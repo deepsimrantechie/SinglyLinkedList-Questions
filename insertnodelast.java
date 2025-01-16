@@ -88,3 +88,50 @@ public class Main {
         Insertnodeatlast(10);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//explationation
+
+{/**We use two pointers (first and second) to solve this problem efficiently in one pass.
+
+Step-by-Step Explanation
+Add a Dummy Node:
+
+Add a dummy node at the beginning of the list to handle edge cases (e.g., removing the head node).
+New list: 0 -> 1 -> 2 -> 3 -> 4 -> 5
+(0 is the dummy node, and 1 is the actual head of the list.)
+Initialize Pointers:
+
+Both first and second pointers start at the dummy node (0).
+Move the first Pointer n + 1 Steps Ahead:
+
+Move the first pointer 3 steps (n + 1 = 2 + 1 = 3):
+Step 1: first points to 1
+Step 2: first points to 2
+Step 3: first points to 3
+Move Both Pointers Until first Reaches the End:
+
+Now, move both pointers one step at a time until first reaches the end of the list:
+Move 1: first points to 4, second points to 1
+Move 2: first points to 5, second points to 2
+Move 3: first points to null (end of the list), second points to 3
+Skip the Target Node:
+
+At this point, second.next points to the node we want to remove (4).
+Update second.next to second.next.next to skip node 4:
+second.next = second.next.next
+Return the Updated List:
+
+The updated list is: 1 -> 2 -> 3 -> 5. */}
