@@ -53,6 +53,19 @@ class LinkedList {
         }
         System.out.println("None");
     }
+    public ListNode deleteLastNode(){
+        if(head == null || head.next ==null){
+
+        }
+        ListNode current=head;
+        ListNode previous = null;
+        while(current.next!=null){
+            previous=current;
+            current=current.next;
+        }
+        previous.next=null;
+        return current;
+    }
 }
 
 // Example usage
@@ -65,5 +78,7 @@ public class Main {
 
         l1.printList(); // Output: 1 --> 2 --> 3 --> None
         System.out.println("The length of the linked list: " + l1.Lengthlinkedlist()); // Output: The length of the linked list: 3
+        deleteLastNode();
+        li.printList();
     }
 }
