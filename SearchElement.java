@@ -43,20 +43,16 @@ class LinkedList {
         System.out.println("None");
     }
 
-    public void deletenodeatPosition(){
-        if(position ==1){
-            head=head.next;
-        }else{
-            ListNode previous = head;
-            int count =1;
-            while(count<position-1){
-                previous=previous.next;
-                count++;
-            }
 
+    public void SearchElement(){
+        ListNode current=head;
+        while(current!=null){
+            if(current.data==SearchKey){
+                return true;
+            }
+            current = current.next;
         }
-        ListNode current = previous.next;
-        previous.next= current.next;
+        return false;
     }
 }
 
@@ -69,6 +65,7 @@ public class Main {
         l1.append(3);
 
         l1.printList();  // Output: 1 --> 2 --> 3 --> None
-        deletenodeatPosition(3);
+       SearchElement(2);
+       l1.printList();        
     }
 }
